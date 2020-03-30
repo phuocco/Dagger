@@ -1,5 +1,6 @@
 package com.example.hieudo.phuocnguyenintern.ui.home.homeFragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +22,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.hieudo.phuocnguyenintern.R;
+import com.example.hieudo.phuocnguyenintern.di.component.ApplicationComponent;
+import com.example.hieudo.phuocnguyenintern.di.component.DaggerHomeScreenFragmentComponent;
+import com.example.hieudo.phuocnguyenintern.di.component.HomeScreenFragmentComponent;
+import com.example.hieudo.phuocnguyenintern.di.module.HomeScreenContextModule;
+import com.example.hieudo.phuocnguyenintern.di.module.HomeScreenFragmentMvpModule;
+import com.example.hieudo.phuocnguyenintern.di.qualifier.ActivityContext;
+import com.example.hieudo.phuocnguyenintern.di.qualifier.ApplicationContext;
 import com.example.hieudo.phuocnguyenintern.others.adapters.QuestionsAdapter;
 import com.example.hieudo.phuocnguyenintern.others.adapters.SearchTitleAdapter;
 import com.example.hieudo.phuocnguyenintern.others.adapters.SiteAdapter;
@@ -38,12 +46,15 @@ import com.example.hieudo.phuocnguyenintern.others.models.networkModels.retrofit
 import com.example.hieudo.phuocnguyenintern.others.models.networkModels.searchInTitle.SearchTitleItem;
 import com.example.hieudo.phuocnguyenintern.others.models.networkModels.tags.TagItem;
 import com.example.hieudo.phuocnguyenintern.others.models.networkModels.users.UserItem;
+import com.example.hieudo.phuocnguyenintern.ui.base.BaseApplication;
 import com.example.hieudo.phuocnguyenintern.ui.base.BaseFragment;
 import com.example.hieudo.phuocnguyenintern.ui.home.detailScreen.DetailScreenFragment;
 import com.example.hieudo.phuocnguyenintern.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -111,7 +122,6 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
     private boolean isSite = false;
     private HomeService homeService;
 
-    private QuestionsAdapter questionsAdapter;
     private TagAdapter tagAdapter;
     private UserAdapter userAdapter;
     private SiteAdapter siteAdapter;
@@ -120,6 +130,20 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
     private int headerID = 0;
     Retrofit retrofit;
 
+    HomeScreenFragment homeScreenFragment;
+    HomeScreenFragmentComponent homeScreenFragmentComponent;
+    @Inject
+    public QuestionsAdapter questionsAdapter;
+
+    @Inject
+    @ApplicationContext
+    public Context context;
+
+    @Inject
+    @ActivityContext
+    public Context activityContext;
+
+    @Inject
     HomeFragmentPresenter presenter;
 
     public static HomeScreenFragment newInstance(String siteApiParam, String siteName, boolean isSite) {
@@ -147,7 +171,7 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
         customSearch();
         presenter.addList(headerArrayList);
         presenter.addSpinnerList(spinnerArrayList, headerID, isSite);
-        presenter.callQuestions(retrofit, homeService, order, "activity", page, siteApi);
+        presenter.callQuestions(order, "activity", page, siteApi);
     }
 
     @OnClick(R.id.homeFrag_ivClose)
@@ -251,11 +275,20 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
     }
 
     private void initPresenter() {
-        presenter = new HomeFragmentPresenter();
-        presenter.setView(this);
+
     }
 
     private void init() {
+
+        ApplicationComponent applicationComponent = BaseApplication.get(getActivity()).getApplicationComponent();
+        homeScreenFragmentComponent = DaggerHomeScreenFragmentComponent.builder()
+                .homeScreenContextModule(new HomeScreenContextModule(this))
+                .homeScreenFragmentMvpModule(new HomeScreenFragmentMvpModule(this))
+
+                .build();
+        homeScreenFragmentComponent.injectHomeScreenFragment(this);
+
+
         search.setHint(getString(R.string.search_questions));
         tvSpinner.setText("Active");
         //action bar

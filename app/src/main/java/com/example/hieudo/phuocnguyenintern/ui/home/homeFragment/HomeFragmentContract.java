@@ -35,7 +35,7 @@ public interface HomeFragmentContract {
     interface Presenter {
         void addList(ArrayList<Header> headerArrayList);
         void addSpinnerList(ArrayList<SpinnerList> spinnerArrayList, int headerID, boolean isSite);
-        void callQuestions(Retrofit retrofit, HomeService homeService, String order,String sort, int page, String siteApi);
+        void callQuestions(String order,String sort, int page, String siteApi);
         void callTags(Retrofit retrofit, HomeService homeService, String order,String sort, int page, String siteApi, String inName);
         void callUsers(Retrofit retrofit, HomeService homeService,int page, String order, String sortUser, String siteApi);
         void callSites(Retrofit retrofit, HomeService homeService, int page);

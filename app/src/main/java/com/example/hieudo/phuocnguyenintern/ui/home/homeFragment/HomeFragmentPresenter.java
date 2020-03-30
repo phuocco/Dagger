@@ -16,6 +16,8 @@ import com.example.hieudo.phuocnguyenintern.others.models.networkModels.users.Us
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,6 +25,15 @@ import retrofit2.Retrofit;
 
 public class HomeFragmentPresenter implements HomeFragmentContract.Presenter {
     private HomeFragmentContract.View view;
+    HomeService homeService;
+
+    @Inject
+    public HomeFragmentPresenter(HomeService homeService, HomeFragmentContract.View view){
+        this.homeService =  homeService;
+        this.view = view;
+    }
+
+
 
     public void setView(HomeFragmentContract.View view) {
         this.view = view;
@@ -64,7 +75,7 @@ public class HomeFragmentPresenter implements HomeFragmentContract.Presenter {
     }
 
     @Override
-    public void callQuestions(Retrofit retrofit, HomeService homeService, String order, String sort, int page, String siteApi) {
+    public void callQuestions(String order, String sort, int page, String siteApi) {
         Call<Question> call = homeService.getQuestions(page, order, sort, siteApi);
         call.enqueue(new Callback<Question>() {
             @Override
@@ -182,7 +193,7 @@ public class HomeFragmentPresenter implements HomeFragmentContract.Presenter {
                     sort = "votes";
                     break;
             }
-            callQuestions(retrofit, homeService, order, sort, page, siteApi);
+            callQuestions(order, sort, page, siteApi);
         } else if (headerID == 1) {
             switch (position) {
                 case 0:
