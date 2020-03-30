@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/auth_background"
+    tools:context=".ui.selectLogin.SignUpFragment">
+    <include
+        layout="@layout/action_bar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/signUpFrag_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/splash_screen_text" />
+            <TextView
+                android:id="@+id/signUpFrag_button_google"
+                android:layout_below="@+id/signUpFrag_logo"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/common_google_signin_btn_text_light_normal"
+                android:gravity="center"
+                android:text="@string/sign_in_with_google"
+                android:textStyle="bold" />
+            <LinearLayout
+            android:id="@+id/signupFrag_llStack"
+            android:layout_below="@+id/signUpFrag_button_google"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_button">
+            <ImageView
+                android:padding="7dp"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/launcher"/>
+            <TextView
+                android:id="@+id/signupFrag_buttonStack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:text="@string/sign_up_using_stack_exchange"/>
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/signUpFrag_tvPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:focusable="true"
+                android:text="@string/text_policy"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

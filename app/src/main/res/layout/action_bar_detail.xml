@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content"
+    android:gravity = "center_vertical"
+    android:background="@color/colorPrimary"
+    android:padding ="10dp">
+    <ImageButton
+        android:id="@+id/actionBarDetail_backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_white"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/back_arrow"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/actionBarDetail_tvTitle"
+        android:layout_toEndOf="@+id/actionBarDetail_backArrow"
+        android:layout_toStartOf="@+id/actionBarDetail_ivAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginStart="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:text="@string/stack_over_flow"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/actionBarDetail_ivAnswer"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/feed_likelytoanswer"
+        android:backgroundTint="@android:color/white"
+       />
+</RelativeLayout>

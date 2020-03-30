@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.homeScreen.HomeActivity">
+
+    <FrameLayout
+        android:id="@+id/containerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/black"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/nav_rlTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/nav_ivTitle"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/logo"
+                        android:background="@drawable/launcher"/>
+                    <TextView
+                        android:id="@+id/nav_tvTitle"
+                        android:layout_toEndOf="@+id/nav_ivTitle"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Sign up or login"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/nav_ivFeed"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/nav_feed"
+                        android:contentDescription="@string/logo" />
+
+                    <TextView
+                        android:id="@+id/nav_tvFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/nav_ivFeed"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:text="Feed"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:background="@color/gray_darker">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:textAllCaps="true"
+                        android:text="Your sites"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:layout_alignParentEnd="true"
+                        android:textAllCaps="true"
+                        android:text="Edit"/>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/nav_rvSites"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+
+                <TextView
+                    android:id="@+id/nav_tvAllSites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All sites"
+                    android:drawableStart="@drawable/nav_empty"
+                    android:padding="5dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@android:color/white"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:background="@color/gray_darker"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gray"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/nav_ivAbout"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/logo"
+                        android:background="@drawable/nav_help"/>
+                    <TextView
+                        android:id="@+id/nav_tvAbout"
+                        android:layout_toEndOf="@+id/nav_ivAbout"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="About"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/nav_rlMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/nav_ivMap"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/logo"
+                        android:background="@drawable/ic_map"/>
+                    <TextView
+                        android:id="@+id/nav_tvMap"
+                        android:layout_toEndOf="@+id/nav_ivMap"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Map"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/nav_rlSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginBottom="40dp"
+                    >
+                    <ImageView
+                        android:id="@+id/nav_ivSettings"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/logo"
+                        android:background="@drawable/nav_settings"/>
+                    <TextView
+                        android:id="@+id/nav_tvSettings"
+                        android:layout_toEndOf="@+id/nav_ivSettings"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Settings"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

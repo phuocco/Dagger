@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "910386129118",
+    "firebase_url": "https://stackexchange-1d1d2.firebaseio.com",
+    "project_id": "stackexchange-1d1d2",
+    "storage_bucket": "stackexchange-1d1d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910386129118:android:c799c5de9b940f41dbba4f",
+        "android_client_info": {
+          "package_name": "com.example.hieudo.phuocnguyenintern"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910386129118-vmto4484rcm9lithek3cjq9ltos0maih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hieudo.phuocnguyenintern",
+            "certificate_hash": "8a7d13d16853ebaef172f5f9fe02da2f0cd2972f"
+          }
+        },
+        {
+          "client_id": "910386129118-f5utosonk1pru5h08km52n0k174meope.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv4ui_84x4mZl6RoIXPstg9Rsu_EaAmsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910386129118-f5utosonk1pru5h08km52n0k174meope.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

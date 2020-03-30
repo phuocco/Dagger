@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_home"
+    tools:context=".ui.homeScreen.HomeFragment">
+
+  <include layout="@layout/action_bar_home"
+      android:visibility="visible"/>
+    <include layout="@layout/action_bar_home_site"
+        android:visibility="gone"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:weightSum="10"
+      >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/search_bar_background"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:weightSum="20"
+        android:layout_weight="7">
+      <EditText
+          android:id="@+id/homeFrag_etSearch"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:padding="5dp"
+          android:textSize="12sp"
+          android:layout_weight="19"
+          android:inputType="text"
+          android:labelFor="@id/homeFrag_etSearch"
+          android:drawableStart="@drawable/ic_menu_search"
+          android:drawablePadding="5dp"
+          android:imeOptions="actionDone"
+          android:background="@drawable/search_bar_edit_text_background"
+          />
+      <ImageView
+          android:id="@+id/homeFrag_ivClose"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:visibility="gone"
+          android:contentDescription="@string/logo"
+          android:layout_gravity="center_vertical"
+        android:background="@drawable/ic_close"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/homeFrag_tvSpinner"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/search_bar_background"
+        android:gravity="center_vertical"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
+        />
+  </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/homeFrag_swipeLayout"
+        android:layout_above="@id/homeFrag_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeFrag_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <ProgressBar
+        android:id="@+id/homeFrag_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@android:color/white"/>
+</RelativeLayout>
+
+</LinearLayout>

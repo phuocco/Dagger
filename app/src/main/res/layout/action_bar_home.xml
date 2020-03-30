@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    android:id="@+id/actionBarHome_mainLayout"
+    android:layout_width = "match_parent"
+    android:layout_height = "50dp"
+    android:gravity = "center_vertical"
+
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/actionBarHome_ivMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_menu_white"/>
+    <LinearLayout
+        android:id="@+id/actionBarHome_llTitle"
+        android:layout_toEndOf="@+id/actionBarHome_ivMenu"
+        android:layout_toStartOf="@id/actionBarHome_ivAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/actionBarHome_tvSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Stack Overflow"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/actionBarHome_tvTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Questions"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/logo"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/actionBarHome_ivAnswer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/feed_likelytoanswer"
+        android:backgroundTint="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

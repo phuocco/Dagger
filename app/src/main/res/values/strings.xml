@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Stack Exchange Test</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_map_api">AIzaSyBaehEJrZy_frNyJ3jWfWtnjLJ6uI_h0wE</string>
+    <string name="google_client_id">910386129118-f5utosonk1pru5h08km52n0k174meope.apps.googleusercontent.com</string>
+    <!--    fb-->
+    <string name="facebook_app_id">1312507025558221</string>
+    <string name="fb_login_protocol_scheme">fb1312507025558221</string>
+
+    <!--    home-->
+    <string name="home">Home</string>
+    <string name="tag">Tag</string>
+    <string name="stack_over_flow">Stack Over Flow</string>
+    <string name="stack_exchange_sites">Stack Exchange Sites</string>
+    <string name="main_sites">Main sites</string>
+    <string name="search_questions">Search Questions&#8230;</string>
+    <string name="search_tags">Search Tags&#8230;</string>
+    <string name="search_users">Search Users&#8230;</string>
+    <string name="search_sites">Search Sites&#8230;</string>
+
+    <string name="arrow_down">Arrow down</string>
+    <string name="likely_to_answer">Likely to answer</string>
+    <string name="search_question">Search Questions&#8230;</string>
+    <string name="active">Active</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="dialog">Dialog</string>
+    <string name="active_questions">Questions</string>
+
+    <!--    question-->
+    <string name="sec_ago">%d sec. ago</string>
+    <string name="min_ago">%d min. ago</string>
+    <string name="hour_ago">%d hour ago</string>
+    <string name="hours_ago">%d hours ago</string>
+    <string name="day_ago">%d day ago</string>
+    <string name="days_ago">%d days ago</string>
+    <string name="votes_over_10000">%dK</string>
+
+    <string name="search_for">Search for: "\"%s"\"</string>
+
+    <!--    detail-->
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="more">More</string>
+    <!--    auth-->
+    <string name="sign_up">Sign up</string>
+    <string name="login">Login</string>
+    <string name="start_using_with_an_account">Start using with an account&#8230;</string>
+    <string name="logo">Logo</string>
+    <string name="splash_text">Loading Stack \nExchange sites&#8230;</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="log_in_using_stack_exchange">Log in using Stack Exchange</string>
+    <string name="log_in_with_facebook">Log in with Facebook</string>
+
+    <string name="log_in_using_another_openid">Log in using another OpenID</string>
+    <string name="sign_up_using_stack_exchange">Sign up using Stack Exchange</string>
+    <string name="text_policy">By sign up, you agree to the <a href="https://stackoverflow.com/legal/privacy-policy">privacy policy</a> and <a href="https://stackoverflow.com/legal/terms-of-service">terms of service</a>.</string>
+    <string name="or">or</string>
+    <string name="back_arrow">back arrow</string>
+    <string name="log_in_with_stack_exchange">Log in with Stack Exchange</string>
+</resources>
