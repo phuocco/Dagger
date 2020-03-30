@@ -16,13 +16,24 @@ import com.example.hieudo.phuocnguyenintern.others.models.networkModels.users.Us
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class HomeFragmentPresenter implements HomeFragmentContract.Presenter {
+    private HomeService homeService;
     private HomeFragmentContract.View view;
+
+    @Inject
+    public HomeFragmentPresenter(HomeService homeService, HomeFragmentContract.View view) {
+        this.homeService = homeService;
+        this.view = view;
+    }
+
+
 
     public void setView(HomeFragmentContract.View view) {
         this.view = view;

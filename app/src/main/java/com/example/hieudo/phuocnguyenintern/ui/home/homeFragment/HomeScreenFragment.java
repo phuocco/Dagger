@@ -1,5 +1,6 @@
 package com.example.hieudo.phuocnguyenintern.ui.home.homeFragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.hieudo.phuocnguyenintern.R;
+import com.example.hieudo.phuocnguyenintern.di.ApplicationContext;
 import com.example.hieudo.phuocnguyenintern.others.adapters.QuestionsAdapter;
 import com.example.hieudo.phuocnguyenintern.others.adapters.SearchTitleAdapter;
 import com.example.hieudo.phuocnguyenintern.others.adapters.SiteAdapter;
@@ -44,6 +46,8 @@ import com.example.hieudo.phuocnguyenintern.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -118,8 +122,14 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
     private SearchTitleAdapter searchTitleAdapter;
     private int page = 1;
     private int headerID = 0;
-    Retrofit retrofit;
+    private Retrofit retrofit;
 
+
+    @Inject
+    @ApplicationContext
+    public Context context;
+
+    @Inject
     HomeFragmentPresenter presenter;
 
     public static HomeScreenFragment newInstance(String siteApiParam, String siteName, boolean isSite) {
@@ -141,7 +151,6 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
     protected void initView(View view) {
         init();
         showActionBarHome(view, siteName, getString(R.string.active_questions));
-        initPresenter();
         checkSite();
         onBottomList();
         customSearch();
@@ -149,6 +158,8 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
         presenter.addSpinnerList(spinnerArrayList, headerID, isSite);
         presenter.callQuestions(retrofit, homeService, order, "activity", page, siteApi);
     }
+
+
 
     @OnClick(R.id.homeFrag_ivClose)
     void onClick(View view) {
@@ -250,10 +261,6 @@ public class HomeScreenFragment extends BaseFragment implements HomeFragmentCont
         }
     }
 
-    private void initPresenter() {
-        presenter = new HomeFragmentPresenter();
-        presenter.setView(this);
-    }
 
     private void init() {
         search.setHint(getString(R.string.search_questions));
