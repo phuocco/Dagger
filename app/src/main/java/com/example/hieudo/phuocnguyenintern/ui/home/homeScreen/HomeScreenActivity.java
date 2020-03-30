@@ -29,6 +29,7 @@ import com.example.hieudo.phuocnguyenintern.others.models.networkModels.retrofit
 import com.example.hieudo.phuocnguyenintern.ui.auth.authScreen.AuthScreenActivity;
 import com.example.hieudo.phuocnguyenintern.ui.base.BaseActivity;
 import com.example.hieudo.phuocnguyenintern.ui.home.homeFragment.HomeScreenFragment;
+import com.example.hieudo.phuocnguyenintern.ui.home.newHome.NewHomeFragment;
 import com.example.hieudo.phuocnguyenintern.ui.mapScreen.MapActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -76,7 +77,7 @@ public class HomeScreenActivity extends BaseActivity implements GoogleApiClient.
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        replaceFragment(new HomeScreenFragment());
+        replaceFragment(new NewHomeFragment());
         init();
         initPresenter();
         initRetrofit();
