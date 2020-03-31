@@ -25,4 +25,6 @@ public class NewHomeFragmentContextModule {
     public Context provideContext(){
         return context;
     }
+
+
 }
